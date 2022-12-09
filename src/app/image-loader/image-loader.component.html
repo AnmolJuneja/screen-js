@@ -1,0 +1,6 @@
+<div class="annotations" [hidden]="!verbose">
+        ImageLoader 
+        <p *ngFor="let line of log" class="logline">{{line}}</p>
+</div>
+
+<app-image-viewer [image]="image" [verbose]="verbose"></app-image-viewer>

@@ -1,0 +1,39 @@
+
+.annotations { 
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    left: 20px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: monospaced;
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-column-gap: 10px;
+}
+
+.label { 
+    color: yellow;
+    text-align:right;
+}
+.buttons { 
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    right: 50px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: monospaced;
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-column-gap: 10px;
+
+}
+
+app-demo-viewer { 
+    z-index:10;
+}

@@ -1,0 +1,6 @@
+<div class="url-media" [@fade]="visualState">
+    <div *ngIf="!!urlItem && !!width && !!height">
+        <iframe #myIFrame [width]="width" [height]="height" [src]="urlItem?.src | safe" scrolling="no"
+            (onload)="onContentLoaded()"></iframe>
+    </div>
+</div>

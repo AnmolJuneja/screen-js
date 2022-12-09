@@ -1,0 +1,5 @@
+<div class="annotations" [hidden]="!verbose">
+        PlaylistLoader 
+        <p *ngFor="let line of log" class="logline">{{line}}</p>
+</div>
+<app-playlist-viewer [playlist]="playlist" [verbose]="verbose"></app-playlist-viewer>

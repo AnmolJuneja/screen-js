@@ -1,0 +1,7 @@
+<div class="video-view-container" [@fade]="visualState">
+    <video #videoElt preload="auto" class="video-view" [poster]="video.thumbnailUrl" (canplay)="onCanPlay($event)"
+        (canplaythrough)="onCanPlayThrough($event)" (play)="onPlay($event)" (ended)="onEnded($event)"
+        (error)="onError($event)" (timeupdate)="onTimeUpdate($event)">
+        <source *ngFor="let vid of sources" [src]="vid.src" [type]="vid.type" crossorigin vg-crossorigin>
+    </video>
+</div>

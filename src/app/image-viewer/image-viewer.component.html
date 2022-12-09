@@ -1,0 +1,15 @@
+<div class='image-viewer-container'>
+    <img class='image-viewer' [src]="src" [alt]="title">
+</div>
+<div class='annotations' [hidden]="!verbose">
+    title: {{image?.title}}
+    <br/> description: {{image?.description}}
+    <br/> thumbnailUrl: {{image?.thumbnailUrl}}
+    <br/> imageUrl: {{image?.imageUrl}}
+    <br/> mimeType: {{image?.mimeType}}
+    <br/> width: {{image?.width}}
+    <br/> height: {{image?.height}}
+    <br/> fileSizeBytes: {{image?.fileSizeBytes}}
+    <br/> updatedAt: {{image?.updatedAt}}
+    <br/>
+</div>

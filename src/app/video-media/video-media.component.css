@@ -1,0 +1,16 @@
+.video-view-container { 
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:black;
+}
+
+/* center the video and scale fit the bounding box */
+.video-view {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}

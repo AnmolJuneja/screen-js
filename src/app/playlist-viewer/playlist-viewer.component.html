@@ -1,0 +1,7 @@
+
+<app-playlist-media class="playlist" [playlist]="playlist" [elapsedTimeMSecs]="elapsedTimeMSecs" [hideByDefault]="false"></app-playlist-media>
+<div class="controls">
+    <span>ElapsedTime = {{elapsedTimeMSecs | date:'mm:ss.SSS'}}</span>
+    <button mat-icon-button (click)="uiPlayPauseButtonClicked()"><mat-icon>{{playPauseButtonLabel}}</mat-icon></button>
+    <button mat-icon-button (click)="uiResetButtonClicked()"><mat-icon>skip_previous</mat-icon></button>
+</div>

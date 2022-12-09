@@ -1,0 +1,5 @@
+<div class="annotations" [hidden]="!verbose">
+        VideoLoader 
+        <p *ngFor="let line of log" class="logline">{{line}}</p>
+</div>
+<app-video-viewer [video]="video" [verbose]="verbose"></app-video-viewer>

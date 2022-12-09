@@ -1,0 +1,6 @@
+<div class="annotations" [hidden]="!verbose">
+    BroadcastLoader
+    <p *ngFor="let line of log" class="logline">{{line}}</p>
+</div>
+<app-broadcast-viewer [broadcast]="broadcast" [verbose]="verbose" [deltaTMins]="deltaTMins"
+    (checkUpdates)="onCheckUpdates()"></app-broadcast-viewer>

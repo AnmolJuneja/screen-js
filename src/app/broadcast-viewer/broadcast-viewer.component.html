@@ -1,0 +1,41 @@
+<div class="broadcast-viewer">
+    <ng-template appBroadcastInsert></ng-template>
+</div>
+<div class='annotations' *ngIf="verbose">
+    <div class="label">datetime:</div>
+    <div class="data">{{ formattedDate }} @ {{ formattedTime }} ({{ tz }})</div>
+    <div class="label">channel:</div>
+    <div class="data">{{ broadcast?.channel.name}}</div>
+    <div class="label">defaultPlaylist.id:</div>
+    <div class="data">{{ broadcast?.channel.defaultPlaylistId }}</div>
+    <div class="label">defaultPlaylist.title:</div>
+    <div class="data">{{ defaultPlaylistTitle }}</div>
+    <!-- 
+    <br/> # scheduledItems: {{ _broadcast?.scheduledContent.length }}
+    <br/> # images: {{ _broadcast?.images.length }}
+    <br/> # videos: {{ _broadcast?.videos.length }}
+    -->
+    <div class="label">currentPlaylist.id:</div>
+    <div class="data">{{ showingNow?.scheduledContent.playlistId }}</div>
+    <div class="label">currentPlaylist.title:</div>
+    <div class="data">{{ showingNow?.scheduledContent.playlist.title }}</div>
+    <div class="label">timePlayed:</div>
+    <div class="data">{{ elapsedTimeMs | elapsedTime }}</div>
+    <div class="label">timeRemaining:</div>
+    <div class="data">{{ countdownMs | elapsedTime }}</div>
+    <div class="label">nextPlaylist.id:</div>
+    <div class="data">{{ showingNext?.scheduledContent.playlistId }}</div>
+    <div class="label">nextPlaylist.title:</div>
+    <div class="data">{{ showingNext?.scheduledContent.playlist.title }}</div>
+    <div class="label">nextPlaylist.datetime:</div>
+    <div class="data">{{ formattedNextDate }} @ {{formattedNextTime }} ({{tz}})</div>
+</div>
+<div class="buttons" *ngIf="verbose">
+    <button mat-button [disabled]="!timerSubscription" (click)="onPauseClicked()">Pause</button>
+    <button mat-button [disabled]="!!timerSubscription" (click)="onPlayClicked()">Play</button>
+    <button mat-button (click)="onDemoClicked()">DemoStart</button>
+    <button mat-button (click)="onCaptureClicked()">CaptureStart</button>
+</div>
+<app-demo-viewer *ngIf="!!showDemo" [screenId]="screenId" [dateTime]="dateTime" [imageUrl]="imageUrl"
+    [willPlayVideo]="!captureOnly" (dataReady)="onDemoDataReady($event)" (demoComplete)="onDemoComplete($event)">
+</app-demo-viewer>

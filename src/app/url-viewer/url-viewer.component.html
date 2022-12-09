@@ -1,0 +1,8 @@
+<div class='url-viewer-container'>
+    <app-url-media [urlItem]="urlItem" [width]="width" [height]="height"></app-url-media>
+</div>
+<div class='annotations' [hidden]="!verbose">
+    title: {{urlItem?.title}}
+    <br /> description: {{urlItem?.description}}
+    <br /> url: {{urlItem?.src}}
+</div>
